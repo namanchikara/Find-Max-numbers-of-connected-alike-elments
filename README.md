@@ -25,5 +25,5 @@ If there are two elements with same connected components then it will return a l
 1 1 1
 
 
-on executing FindMaxElement(), function will return [1,2,1]
-Where as on exeuting FindMaxNow() will return 3
+on executing FindMaxElement(), function will return [1,2,1].
+Whereas, on exeuting FindMaxNow() will return 3
