@@ -1,8 +1,8 @@
 class FindMax:
   def array(self,array):
+    self.array = array
     self.visited = []
     self.tovisit = [[0,0]]
-    self.array = array
 
   def MaxForCurrentCoordinates(self, x,y):
       count = 0
@@ -59,6 +59,8 @@ class FindMax:
 
 
   def FindMaxNow(self):
+      self.visited = []
+      self.tovisit = [[0,0]]
       mcount = 0
       while self.tovisit:
           x , y = self.tovisit.pop()
@@ -67,8 +69,27 @@ class FindMax:
               if mcount < count:
                   mcount = count
       
-      return(mcount)
+      return mcount
 
+  def FindMaxElement(self):
+      mcount = 0
+      element = ''
+      while self.tovisit:
+          x , y = self.tovisit.pop()
+          if [x,y] not in self.visited:
+              count = self.MaxForCurrentCoordinates(x,y)
+              if mcount < count:
+                  mcount = count
+                  element = self.array[x][y]
+              
+              elif mcount == count:
+                  
+                  if type(element) is int:
+                      element = [element]
+                  element.append(self.array[x][y])
+                 
+      return element
+      
 
 if __name__ == "__main__":
     n = int(input())
@@ -79,4 +100,4 @@ if __name__ == "__main__":
 
     object = FindMax()
     object.array(array)
-    print(object.FindMaxNow())
+    print(object.FindMaxElement(),object.FindMaxNow())
