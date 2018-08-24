@@ -19,8 +19,11 @@ Maximum connected element in above matrix is 2, with 10 values, so the program w
 If there are two elements with same connected components then it will return a list of such components for example:
 
 1 1 1
+
 2 2 2
+
 1 1 1
+
 
 on executing FindMaxElement(), function will return [1,2,1]
 Where as on exeuting FindMaxNow() will return 3
